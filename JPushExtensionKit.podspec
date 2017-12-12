@@ -15,7 +15,7 @@ Pod::Spec.new do |s|
 
   s.source       = { :git => "https://github.com/Limon-O-O/JPushExtensionKit.git", :tag => "#{s.version}" }
 
-  s.vendored_frameworks = 'Source/JPushExtension.framework'
+  s.vendored_frameworks = 'Source/JPushExtensionKit.framework'
 
   s.xcconfig            = { "LIBRARY_SEARCH_PATHS" => "\"$(PODS_ROOT)/JPushExtensionKit/**\"" }
 
@@ -25,10 +25,10 @@ Pod::Spec.new do |s|
   s.requires_arc = false
 
   s.prepare_command     = <<-EOF
-  mkdir Source/JPushExtension.framework/Modules
-  touch Source/JPushExtension.framework/Modules/module.modulemap
-  cat <<-EOF > Source/JPushExtension.framework/Modules/module.modulemap
-  framework module JPushExtension {
+  mkdir Source/JPushExtensionKit.framework/Modules
+  touch Source/JPushExtensionKit.framework/Modules/module.modulemap
+  cat <<-EOF > Source/JPushExtensionKit.framework/Modules/module.modulemap
+  framework module JPushExtensionKit {
       header "JPushNotificationExtensionService.h"
 
       export *

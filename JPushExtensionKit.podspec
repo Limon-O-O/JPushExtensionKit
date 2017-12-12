@@ -11,12 +11,12 @@ Pod::Spec.new do |s|
   s.license      = "MIT"
   s.author       = { "Limon" => "fengninglong@gmail.com" }
 
-  s.platform     = :ios, "8.0"
+  s.platform     = :ios, "9.0"
 
   s.source              = { :http => "https://sdkfiledl.jiguang.cn/cocoapods/jpushExtension/JPush-iOS-3.0.7.zip" }
 
-  s.source_files = '*.h'
-  s.vendored_libraries = "*.a"
+  s.source_files = '*/*.h'
+  s.vendored_libraries = "*/*.a"
 
   s.xcconfig            = { "LIBRARY_SEARCH_PATHS" => "\"$(PODS_ROOT)/JPushExtensionKit/**\"" }
 
@@ -25,18 +25,4 @@ Pod::Spec.new do |s|
 
   s.requires_arc = false
 
-  s.prepare_command     = <<-EOF
-  mkdir Source/JPushExtensionKit.framework/Modules
-  touch Source/JPushExtensionKit.framework/Modules/module.modulemap
-  cat <<-EOF > Source/JPushExtensionKit.framework/Modules/module.modulemap
-  framework module JPushExtensionKit {
-      header "JPushNotificationExtensionService.h"
-
-      export *
-
-      link "z"
-      link "resolv"
-  }
-  \EOF
-  EOF
 end

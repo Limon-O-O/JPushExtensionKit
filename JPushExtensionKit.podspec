@@ -13,9 +13,10 @@ Pod::Spec.new do |s|
 
   s.platform     = :ios, "8.0"
 
-  s.source       = { :git => "https://github.com/Limon-O-O/JPushExtensionKit.git", :tag => "#{s.version}" }
+  s.source              = { :http => "https://sdkfiledl.jiguang.cn/cocoapods/jpushExtension/JPush-iOS-3.0.7.zip" }
 
-  s.vendored_frameworks = 'Source/JPushExtensionKit.framework'
+  s.source_files = '*.h'
+  s.vendored_libraries = "*.a"
 
   s.xcconfig            = { "LIBRARY_SEARCH_PATHS" => "\"$(PODS_ROOT)/JPushExtensionKit/**\"" }
 
